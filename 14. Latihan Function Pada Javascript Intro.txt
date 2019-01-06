@@ -1,0 +1,192 @@
+/* function 
+----------------------------------------------
+"function adalah kunci utama pada javascript,
+yang membuat javascript sangat powerfull"
+      
+      - Douglas Crockford
+
+----------------------------------------------
+=========================================================
+Definisi function
+1. Sebuah sub-program / sub-routine yang 'dipanggil' di
+   bagian lain pada program
+2. Merupakan struktur dasar pembentuk dari javascript 
+   (fundemental building block)
+3. Disebut juga sebagai prosedur (kumpulan statement untuk 
+   melakukan tugas atau menghitung kalkulasi sebuah nilai)
+4. Untuk dapat menggunakannya, kita harus 'membuat' terlebih
+   dahulu function tersebut, lalu 'memanggil' nya 
+5. Termasuk kedalam First-Class Object
+
+=========================================================
+Alasan Kenapa menggunakan function ?
+1. Reusability(DRY : Do not Repeat Yourself)
+2. Dekomposisi / Abstraksi
+3. Modularitas
+=========================================================
+Kategori function
+1. Built-in Function
+2. User-Defined Function
+---------------------------------------------------------
+---------------------------------------------------------
+Built-in function
+1. Fungsi yang sudah disediakan / 'dibuat' oleh javascript
+2. Kita tinggal 'memanggil'-nya saja
+3. Contoh:
+	- alert();
+	- confirm();
+	- prompt();
+4. dan masih banyak yang lain
+//--------------------------------------------------------
+Built-in function:String
+  Function										Description
+  ========										===========
+- <string1>.contains(<string2>)					Mengembalikan nilai true apabila string2 adalah substring dari string1, jika tidak maka false.
+- <string1>.endsWith(<string2>)					Mengembalikan nilai true apabila string1 berakhir dengan string2.
+- <string1>.startsWith(<string2>)				Mengembalikan nilai true apabila string1 berawalan dengan string2.
+- <string>.remove(<substring>)					Menghilangkan substring dari string yang diberikan.
+- <string>.removeFirstOccurence(<substring>)	Removes the first occurence of the substring from the given string.
+- <string>.removeLastOccurence(<substring>)		Removes the last occurence of the second argument string from the first argument string.
+- <string>.getSuffix(<substring>)				Returns the string after the specified substring.
+- <string>.getPrefix(<substring>)				Returns the string before the specified substring.
+- <string>.toUpperCase()						Mengubah string menjadi uppercase.
+- <string>.toLowerCase()						Mengubah string menjadi lowercase.
+- <string>.getAlphaNumeric()					Returns only the alphanumeric present in the specified string.
+- <string>.getAlpha()							Returns only the alphabets present in the specified string.
+- <string>.removeAllAlphaNumeric()				Remove all the alphanumeric present in the specified string.
+- <string>.removeAllAlpha()						Remove all the alphabets present in the specified string.
+- <string>.length()								Returns the length of the given string as an integer value.
+- <string>.getOccurence
+  Count(<substring>)							Returns the number of times a substring is present in the given string.
+- <string>.indexOf(<substring>)					Returns the index of the first occurence of the substring in the given string
+- <string>.lastIndexOf(<substring>)				Returns the index of the last occurence of the substring in the given string
+- <string>.substring(<
+  <s.index>, <e.index>)							Returns the string from the specified startindex to the endindex. 
+- <string>.trim()								Removes any leading and trailing space
+												from a string
+- <string1>.equalsIgnoreCase
+  <string2>										Mengembalikan nilai true apabila <string1> sama dengan <string2>.
+- <expression>.toString							Mengubah semua tipe expresi menjadi string.
+												Refer the behavior of toString() when applied to date/time
+												value.
+- <string>.matches
+  (<regular expression>)						Returns true if the given string matches regular expression given as argument.
+- <string>.replaceAll
+  (<searchString>,
+  <replacementString>,false))					Replaces all occurrence of the string that matches the given <searchString> expression with the given <replacementString>.
+ 
+- <string>.replaceFirst
+  (<searchString>,
+  <replacementString>,
+  false)										Replaces the first occurrence of the string that matches
+  												the given <searchString> expression with the given <replacementString>.
+
+
+leftpad(str,size)							    Returns the input string with whitespace characters padded to the left of the string. 
+rightpad(str,size) 								Returns the input string with whitespace characters padded to the right of the string.
+
+Ex.
+>> var nama = "Adam Backtiar Azhari";
+console.log(nama.charAt(5));
+<- B
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Built-in function:Math
+  Function										Description
+  ========										===========
+  ---------------------------------------------------------
+               			Property
+  ---------------------------------------------------------
+- Math.E 										Euler's constant and the base of natural logarithms, approximately 2.718.
+- Math.LN2 										Natural logarithm of 2, approximately 0.693.
+- Math.LN10 									Natural logarithm of 10, approximately 2.303.
+- Math.LOG2E 									Base 2 logarithm of E, approximately 1.443.
+- Math.LOG10E 									Base 10 logarithm of E, approximately 0.434.
+- Math.PI 										Ratio of the circumference of a circle to its diameter, approximately 3.14159.
+- Math.SQRT1_2 									Square root of 1/2; equivalently, 1 over the square root of 2, approximately 0.707.
+- Math.SQRT2 									Square root of 2, approximately 1.414.
+  ---------------------------------------------------------
+               			Methods
+  ---------------------------------------------------------
+    Function										Description
+  ========										===========
+- Math.abs(x) 									Returns the absolute value of a number.
+- Math.acos(x) 									Returns the arccosine of a number.
+- Math.acosh(x) 								Returns the hyperbolic arccosine of a number.
+- Math.asin(x) 									Returns the arcsine of a number.
+- Math.asinh(x) 								Returns the hyperbolic arcsine of a number.
+- Math.atan(x) 									Returns the arctangent of a number.
+- Math.atanh(x) 								Returns the hyperbolic arctangent of a number.
+- Math.atan2(y, x) 								Returns the arctangent of the quotient of its arguments.
+- Math.cbrt(x) 									Returns the cube root of a number.
+- Math.ceil(x) 									Returns the smallest integer greater than or equal to a number.
+- Math.clz32(x) 								Returns the number of leading zeroes of a 32-bit integer.
+- Math.cos(x) 									Returns the cosine of a number.
+- Math.cosh(x) 									Returns the hyperbolic cosine of a number.
+- Math.exp(x) 									Returns Ex, where x is the argument, and E is Euler's constant (2.718…),
+												the base of the natural logarithm.
+- Math.expm1(x) 								Returns subtracting 1 from exp(x).
+- Math.floor(x) 								Returns the largest integer less than or equal to a number.
+- Math.fround(x) 								Returns the nearest single precision float representation of a number.
+- Math.hypot([x[, y[, …]]]) 					Returns the square root of the sum of squares of its arguments.
+- Math.imul(x, y) 								Returns the result of a 32-bit integer multiplication.
+- Math.log(x) 									Returns the natural logarithm (loge, also ln) of a number.
+- Math.log1p(x) 								Returns the natural logarithm (loge, also ln) of 1 + x for a number x.
+- Math.log10(x)									Returns the base 10 logarithm of a number.
+- Math.log2(x) 									Returns the base 2 logarithm of a number.
+- Math.max([x[, y[, …]]]) 						Returns the largest of zero or more numbers.
+- Math.min([x[, y[, …]]]) 						Returns the smallest of zero or more numbers.
+- Math.pow(x, y)								Returns base to the exponent power, that is, baseexponent.
+- Math.random() 								Returns a pseudo-random number between 0 and 1.
+- Math.round(x) 								Returns the value of a number rounded to the nearest integer.
+- Math.sign(x) 									Returns the sign of the x, indicating whether x is positive, negative or zero.
+- Math.sin(x) 									Returns the sine of a number.
+- Math.sinh(x) 									Returns the hyperbolic sine of a number.
+- Math.sqrt(x) 									Returns the positive square root of a number.
+- Math.tan(x) 									Returns the tangent of a number.
+- Math.tanh(x) 									Returns the hyperbolic tangent of a number.
+- Math.toSource() 								Mengembalikan string "Math".
+- Math.trunc(x)									Returns the integer part of the number x, removing any fractional digits.
+
+Ex.
+>> var bil = Math.random();
+console.log(bil);
+<- 0.6380714806571719
+---------------------------------------------------------
+---------------------------------------------------------
+User-Defined Function
+1. Fungsi yang kita buat sendiri
+2. Menggunakan keyword function
+3. nama Function(optional)
+4. Parameter/ Argument
+   - disimpan di dalam()
+   - boleh ada atau tidak, jika ada boleh lebih dari satu
+   - dipisahkan oleh koma(,)
+5. Function body, 'dibungkus' dengan {}
+6. Dapat mengembalikan nilai(return value) atau tidak
+
+Membuat user-defined function
+1. Dengan deklarasi / function declaration
+2. Dengan ekspresi / function expression
+
+Ex. Function declaration
+>>function jumlahDuaBilangan(a, b) {
+	var total;
+	total = a + b;
+
+	return total;
+}
+
+Ex. Function expression
+>>function jumlahDuaBilangan = function(a, b) {
+	
+	var total; 
+	total = a + b;
+
+	return total;
+} 
+
+Menjalankan function
+*/
+>> alert(jumlahDuaBilangan(1,2));
+   alert(jumlahDuaBilangan(25,30));
+   alert(jumlahDuaBilangan(1500,17.5)); 

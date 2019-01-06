@@ -1,0 +1,35 @@
+/* sebuah tipe data yang digunakan untuk merepresentasikan logika 'true' atau 'false'  */
+
+// Pengkondisian
+//Example.
+1.	>> var x = 10; // <-- Merubah Nilai Input 'x' = '10'
+	<- undefined  // <-- Nilai Return(Pengembalian) Output undefined (karena memproses data yang sebelumnya belum di identifikasi) 
+	>> x < 20 /* <-- Mengecek Nilai Input 'x' kurang dari '20' */
+	<- true 
+2.  >> "Apel" == "apel" /* <-- Membandingkan Nilai Input */
+	<- false  /* <-- Nilai Return(Pengembalian) Output pengecek case sensitive nilai  tidak sama) */
+3.	>>
+
+// Fungsi Boolean(nilai)
+1. >> Boolean(10 < 20) /* <-- Membandingkan Nilai Input */
+   <- true             /* <-- Nilai Return(Pengembalian) Output hasil nilai boolean */
+2. >> Boolean(10)      /* <-- Mengecek Nilai Input */
+   <- true             /* <-- Nilai Return(Pengembalian) Output nilai boolean */
+3. >> Boolean(-1)      /* <-- Mengecek Nilai Input */
+   <- true             /* <-- Nilai Return(Pengembalian) Output nilai boolean */
+4. >> Boolean(-1)      /* <-- Mengecek Nilai Input */
+   <- false            /* <-- Nilai Return(Pengembalian) Output nilai boolean */
+
+// Nilai-nilai pada javascript menyimpan true(Truthy) and false(Falsy)
+|-----------------------||----------------------|
+|		Truthy			||			Falsy		|
+|-----------------------||----------------------|
+|		true			||			false		|
+|	non-zero number		||			 0			|
+|		"string"		||			""			|
+|		 object			||		  undefined		|				
+|		arrays			||			null		|
+|	   functions		||			NaN			|
+|_______________________||______________________|
+//Nb.
+NaN = Not a Number

@@ -1,0 +1,249 @@
+/* Operator dalam javascript adalah sebuah simbol yang digunakan untuk melakukan operasi 
+Macam Macam Operator Pada Javascript
+1. Aritmatika
+2. Penugasan
+3. Perbandingan
+4. Logika
+5. String
+6. Kondisional
+7. Typeof
+
+Operator Javascript dibagi berdasarkan jumlah operand nya
+['aritmatika','penugasan','perbandingan','logika','string'] = binary
+-------------------------------------------------------------------
+=================== Operator Binary================================
+Operator yang membutuhkan 2 operand
+Ex: operand1 operator_name operand2
+==================================================================
+['typeof'] = unary
+===================== Operator Unary =============================
+Operator yang membutuhkan 1 operand
+Ex: operator_name operand
+    operand operator_name 
+==================================================================
+['kondisional'] = ternary
+===================== Operator Unary =============================
+Operator yang membutuhkan 3 operand
+==================================================================
+-------------------------------------------------------------------
+Operator Aritmatika = +, -, *, / , % ( modulo / modululus / sisa bagi )
+########################## Contoh ##################################
+*/
+>> 10 / 5 /* <-- Nilai Input */
+<- 2 /* <-- Nilai Return(Pengembalian) Output */
+
+>> 10 % 5 /* <-- Nilai Input = 10 dibagi 5 = 2 */
+<- 0 /* <-- Nilai Return(Pengembalian) Output bernilai 0 karena 10 dibagi 5 = 2 sisa 0 */
+
+>> 10 % 3 /* <-- Nilai Input = 10 dibagi 3 = (3 x 3 = 9) sisa 1 */
+<- 1 /* <-- Nilai Return(Pengembalian) Output bernilai 1 karena 10 dibagi 3 = (3 x 3 = 9) sisa 1 */
+
+// Operator precedence = urutan operasi matematika
+/* KuKaBaTaKu = 1. Kurung 
+				  2. Kali 
+				  	3. Bagi 
+				  	  4. Tambah 
+				  	    5. Kurang
+*/
+>> 1 + 2 * 3 - 4 /* <-- Nilai Input 1 + (2 x 3) - 4*/
+<- 3 /* <-- Nilai Return(Pengembalian) Output Sesuai Operator precedence */
+
+>> (1 + 2) * 3 - 4 /* <-- Nilai Input (1 + 2) x 3 - 4 */
+<- 3 /* <-- Nilai Return(Pengembalian) Output Sesuai Operator precedence */
+
+>> (1 + 2) * (3 - 4) * -7 /* <-- Nilai Input */
+<- 21 /* <-- Nilai Return(Pengembalian) Output Sesuai Operator precedence */
+/*
+##########################################################################
+--------------------------------------------------------------------------
+Operator Assignment = Operator Penugasan sering mengunakan tanda '='
+############################## Contoh ####################################
+*/
+>> var x 	  /* <-- Nilai Input variable 'x' */
+<- undefined  /* <-- Nilai Return(Pengembalian) Output x belum diketahui */
+>> x = 10 	  /* <-- Menyimpan Nilai Input variable 'x' sama dengan '10' */
+<- 10 	      /* <-- Nilai Return(Pengembalian) variable 'x' diketahui sama dengan '10' */
+>> x          /* <-- Nilai Input variable 'x' */
+<- 10 		  /* <-- Menload Nilai Return(Pengembalian) variable 'x' diketahui sama dengan '10' karena variable
+                     'x' telah disimpan pada memory */
+>> x = 200    /* <-- Mengubah Nilai Input variable 'x' */
+<- 200        /* <-- Nilai Return(Pengembalian) variable 'x' diketahui sama dengan '200' */
+>> x          /* <-- Nilai Input variable 'x' */
+<- 200        /* <-- Nilai Ubah Return(Pengembalian) variable 'x' diketahui sama dengan '200' */
+
+/* Macam Macam Operator Penugasan
+1. = 		
+2. +=			|	x += y   |   x = x + y
+3. -=			|	x -= y   |   x = x - y
+4. *=			|	x *= y   |   x = x * y
+5. /=			|	x /= y   |   x = x / y
+6. %=			|	x %= y 	 |   x = x 5 y
+*/				
+
+>> x = 10 /* <-- Nilai Input variable 'x' */
+<- 10 /* <-- Nilai Return(Pengembalian) variable 'x' diketahui sama dengan '10' */
+>> x += 5 /* <-- Nilai Input variable 'x = 10' ,'+' dan '=' 5  */
+<- 15 /* <-- Nilai Return(Pengembalian) variable 'x' diketahui sama dengan '10' lalu ditambah '5' = '15' */
+//###########################################################################
+// Operator Comparison = Operator Perbandingan sering mengunakan tanda '='
+
+/* Macam Macam Operator Perbandingan 		
+1. |	==    |   Sama Dengan 				|	
+2. |	!=    |   Tidak Sama Dengan 		|
+3. |	===   |   Strict Sama Dengan 		|
+4  |	!==   |   Strict Tidak Sama Dengan 	|
+5. |	>	  |   Lebih Besar Dari 			|
+6. |	< 	  |   Lebih Kecil Dari 			|
+7. |	>= 	  |   Lebih Besar Sama Dengan   |
+8. |	<= 	  |   Lebih Kecil Sama Dengan 	|
+*/
+
+//Example.
+>> 10 == 10 /* <-- Nilai Input */
+<- true
+>> 10 == 20 /* <-- Nilai Input */
+<- false
+
+>> 10 != 10 /* <-- Nilai Input */
+<- false
+>> 10 != 20 /* <-- Nilai Input */
+<- true
+
+>> 10 == "10" /* <-- Nilai Input */
+<- true
+>> 10 == "20" /* <-- Nilai Input */
+<- false
+
+>> 10 === "10" /* <-- Nilai Input */
+<- false       /* <-- Nilai Return(Pengembalian) Output 'false' karena '===' melakukan pengecekan tipe data sama juga */
+
+>> 10 !== "10" /* <-- Nilai Input */
+<- true        /* <-- Nilai Return(Pengembalian) Output 'true' karena '!==' melakukan pengecekan (apakah bukan) tipe data juga */
+//##########################################################################
+// Operator Logical = Operator Logika sering mengunakan tanda '='
+
+/* Macam Macam Operator Logika 		
+1. |	&&    |     AND 	|	
+2. |	||    |     OR 		|
+3. |	!	  |     NOT 	|
+*/
+
+//Example.
+>> x      						/* <-- Nilai Input yang sebelumnya di definisikan 'x = 10' lalu 'x += 5' */
+<- 15     						/* <-- Nilai Return(Pengembalian) Output */
+>> (x % 2 == 1) 				/* <-- Nilai Input Dalam Satuan Expresi */
+<- false 						/* <-- Nilai Return(Pengembalian) Output Karena 15 dibagi 2 sisa 5  */
+>> (x % 3 == 0) 				/* <-- Nilai Input Dalam Satuan Expresi */
+<- true 						/* <-- Nilai Return(Pengembalian) Output Karena 15 dibagi 3 sisa 0  */
+
+>> x = 12 						/* <-- Merubah Nilai Input 'x' = '12' */
+<- 12 							/* <-- Nilai Return(Pengembalian) Output */
+>> (x % 2 == 0) 				/* <-- Nilai Input Dalam Satuan Expresi */
+<- true 						/* <-- Nilai Return(Pengembalian) Output Karena 12 dibagi 2 sisa 0  */
+
+>> x 							/* <-- Nilai Input */
+<- 12 							/* <-- Nilai Return(Pengembalian) Output */
+>> (x % 3 == 0) && (x < 10) 	/* <-- Nilai Input 'Expresi 1' AND 'Expresi 2' */
+<- false 						/* <-- Nilai Return(Pengembalian) Output 'false' Karena 'Hasil Expresi 1 = "true"' 
+									   Namun Setelah Mengunakan AND Dengan 'Hasil Expresi 2 = "false"' maka nilai akan
+									   berubah menjadi 'false' hasil kedua expresi harus sama agar bisa menampilkan Nilai
+									   'true' Dan Seterusnya... */
+>> x 							/* <-- Nilai Input */
+<- 12 							/* <-- Nilai Return(Pengembalian) Output */
+>> (x % 3 == 0) && (x <= 0) 	/* <-- Nilai Input 'Expresi 1' AND 'Expresi 2' */
+<- true 						/* <-- Nilai Return(Pengembalian) Output 'true' Karena 'Hasil Expresi 1 = "true"'
+									   Namun Setelah Mengunakan AND Dengan 'Hasil Expresi 2 = "true"' maka nilai akan
+									   berubah menjadi 'true' dikarenakan dua hasil expresi sama-sama 'true'  */
+
+
+>> x 							/* <-- Nilai Input */
+<- 12 							/* <-- Nilai Return(Pengembalian) Output */
+>> (x % 3 == 0) || (x <= 0) 	/* <-- Nilai Input 'Expresi 1' OR 'Expresi 2' */
+<- true 					    /* <-- Nilai Return(Pengembalian) Output asal salah satu Nilai benar maka 'true' */
+>> (x % 3 == 0) || (x < 10) 	/* <-- Nilai Input 'Expresi 1' OR 'Expresi 2' */
+<- true 						/* <-- Nilai Return(Pengembalian) Output asal salah satu Nilai benar maka 'true' */
+>> (x % 7 == 0) || (x <= 10) 	/* <-- Nilai Input 'Expresi 1' OR 'Expresi 2' */
+<- false 						/* <-- Nilai Return(Pengembalian) Output Kedua Nilai salah maka 'false' */
+>> !(x % 2 == 0) 				/* <-- Nilai Input */
+<- false 						/* <-- Nilai Return(Pengembalian) Output 'NOT' Membalik jawaban */
+/*
+########################################################################
+------------------------------------------------------------------------
+Operator / Operator String = mengunakan '+' karena '+' memiliki 2 fungsi
+
+Rules. 
+1. Apabila Operand nya angka maka menjadi Operasi Aritmatika
+2. Apabila Operand nya string / tulisan maka menjadi Operator pengabung string
+*/
+
+>> var a 							/* <-- Nilai Input */
+<- undefined
+>> var b 							/* <-- Nilai Input */
+<- undefined
+>> var c 							/* <-- Nilai Input */
+<- undefined
+>> a = "apel" 						/* <-- Nilai Input dari isi variable a */
+<- "apel "
+>> b = "punya budi" 				/* <-- Nilai Input dari isi variable d */
+<- "punya budi "
+>> c = "hanya ada satu"	 			/* <-- Nilai Input dari isi variable c */
+<- "hanya ada satu"
+>> a + " " + b + " " + c 			/* <-- Melalukan Pengabungan variabel a + b + c dengan spasi */
+<- "apel punya budi hanya ada satu"
+
+>> 10 + "10" 						/* <-- Nilai Input */
+<- "1010" 							/* <-- Nilai Return(Pengembalian) Output penjumlahan angka dan string maka angka + string
+										   digabung tidak bisa dijumlah namun akan menjadi operator string (Peraturan Ke. 2) 
+									*/
+>> 10 + 10 + "10" 					/* <-- Nilai Input */
+<- "2010" 							/* <-- Nilai Return(Pengembalian) Output penjumlahan angka dan string maka angka + string
+								 		   digabung tidak bisa dijumlah namun akan menjadi operator string (Peraturan Ke. 2) 
+								 	*/
+>> "10" + 10 + 10 					/* <-- Nilai Input */
+<- "101010" 						/* <-- Nilai Return(Pengembalian) Output penjumlahan angka dan string maka angka + string
+										   digabung tidak bisa dijumlah namun akan menjadi operator string (Peraturan Ke. 2) 
+									*/
+/* 
+------------------------------------------------------------------------
+########################################################################
+------------------------------------------------------------------------
+Operator typeof (Unary) / Operasi typeof = digunakan untuk mengetahui tipe data apa yang akan dimasukkankan kedalamnya 
+
+Rules.
+typeof(operand)
+*/
+
+>> typeof(10) 	    /* <-- Nilai Input untuk mengecek jenis type data */
+<- "number" 	    /* <-- Nilai Return(Pengembalian) Output Hasil jenis type data */
+>> typeof(false)    /* <-- Nilai Input untuk mengecek jenis type data */
+<- "boolean"        /* <-- Nilai Return(Pengembalian) Output Hasil jenis type data */
+>> typeof("apple")  /* <-- Nilai Input untuk mengecek jenis type data */
+<- "string"         /* <-- Nilai Return(Pengembalian) Output Hasil jenis type data */
+>> typeof(apple)    /* <-- Nilai Input untuk mengecek jenis type data */
+<- "undefined"      /* <-- Nilai Return(Pengembalian) Output Hasil jenis type data (bukan 'string' karena tidak memiliki
+                           tanda petik dua) */
+>> typeof("10")     /* <-- Nilai Input untuk mengecek jenis type data */
+<- "string"         /* <-- Nilai Return(Pengembalian) Output Hasil jenis type data ('string' karena meski berisi angka namun
+                           memiliki tanda petik dua) */
+/*
+------------------------------------------------------------------------
+########################################################################
+------------------------------------------------------------------------
+ Operator Conditional / Operator Kondisional (ternary) membutuhkan 3 Operand di dalamnya = melakukan pengecekan dalam suatu kondisi dan menentukan nilai yang dihasilkan ketika kondisinya bernilai 'true' atau 'false' 
+
+Rules.
+(kondisi) ? benar : salah
+
+Ex.
+(x % 2 == 0) ? "genap" : "ganjil"
+*/
+
+>> x 									/* <-- Nilai Input */
+<- 12 									/* <-- Nilai Return(Pengembalian) Output */
+>> (x % 3 == 0) ? "genap" : "ganjil" 	/* <-- Nilai Input untuk mengecek apakah Expresi "ganjil" atau "genap" sesuai Output
+											   yang di definisikan sendiri  */
+<- "genap" 								/* <-- Nilai Return(Pengembalian) Output */
+>> (x % 7 == 0) ? "genap" : "ganjil" 	/* <-- Nilai Input untuk mengecek apakah Expresi "ganjil" atau "genap" sesuai Output
+	 										   yang di definisikan sendiri  */
+<- "ganjil" 							/* <-- Nilai Return(Pengembalian) Output */
+

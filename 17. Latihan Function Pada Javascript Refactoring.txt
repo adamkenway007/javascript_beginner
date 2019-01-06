@@ -1,0 +1,40 @@
+/* --------------- Refactoring ---------------
+sebuah proses mengubah kode agar menjadi lebih
+'baik' tanpa mengubah fungsionalitasnya.
+
+Refactoring = alasan menggunakan refactoring
+-----------
+- Readibility
+- DRY(Don't Repeat Yourself) = mengurangi/mencegah duplikasi kode
+									1. Penggunaan variable yang berlebihan
+									2. Efisiensi Penggunaan 
+									   function,method / etc
+- Testability (penulisan kode agar mudah apabila melakukan pengujian)
+- Performace (Bagaimana menulis kode agar bisa meningkatkan performace)
+- Maintainbility
+
+//Ex. Sebelum Refactoring
+*/
+>> function jumlahVolumeDuaKubus(a, b) {
+   var volumeA;
+   var volumeB;
+   var total;
+
+   volumeA = a * a * a;
+   volumeB = b * b * b;
+
+   total = volumeA + volumeB;
+
+   return total;
+ }
+
+>> alert(jumlahVolumeDuaKubus(8, 3));
+
+//Ex. Sesudah Refactoring
+
+>> function jumlahVolumeDuaKubus(a, b) {
+
+   return a * a * a + b * b * b;
+ }
+
+>> alert(jumlahVolumeDuaKubus(8, 3));

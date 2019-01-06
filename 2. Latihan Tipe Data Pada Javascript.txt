@@ -1,0 +1,86 @@
+/* Coba Anda input manual pada console browser anda
+-------------- Angka tanpa desimal ----------------
+*/
+>> 10  /* <-- Nilai Input */
+<- 10 /* <-- Nilai Return(Pengembalian) Output */
+
+>> 2000  /* <-- Nilai Input */
+<- 2000 /* <-- Nilai Return(Pengembalian) Output */
+
+>> 123456  /* <-- Nilai Input */
+<- 123456 /* <-- Nilai Return(Pengembalian) Output */
+
+>> 999999999999999 /* <-- Nilai Input */
+<- 999999999999999 /* <-- Nilai Return(Pengembalian) Output */
+
+>> 9999999999999999  /* <-- Nilai Input(Apabila bernilai lebih dari 15 digit maka..) */
+<- 10000000000000000 /* <-- Nilai Return(Pengembalian) Output (Nilai Dibulatkan) */
+//--------------------------------------------------------------------
+//------------------- Angka dengan desimal ---------------------------
+//Nb. javascript tidak bisa membaca nilai comma, cuman bisa titik
+>> 3.14 /* <-- Nilai Input */
+<- 3.14 /* <-- Nilai Return(Pengembalian) Output */
+
+>> 20.00 /* <-- Nilai Input (Apabila Nilai 0. dan 0 semua setelahnya di balik titik.. ) */
+<- 20 /* <-- Nilai Return (Pengembalian) Output maka nilai dibulatkan */
+
+>> 400.123123123 /* <-- Nilai Input */
+<- 400.123123123 /* <-- Nilai Return(Pengembalian) Output */
+
+>> 20.123123123123423232323232323232323 /* <-- Nilai Input */
+<- 20.123123123123424 /* <-- Nilai Return(Pengembalian) Output Nilai Maksimal 17 Apabila ada setelahnya maka tidak terbaca */
+
+>> 0.3 + 0.7 /* <-- Nilai Input */
+<- 1 <-- /* Nilai Return(Pengembalian) Output */
+
+>> 0.2 + 0.1 /* <-- Nilai Input */
+<- 0.30000000000000004 /* <-- Nilai Return(Pengembalian) Output (Terkadang Penjumlahan nilai 0 sebelum . kadang kala tidak valid ) */
+//-----------------------------------------------------------------------
+//----------------------------- Eksponen --------------------------------
+/* Eksponen adalah bentuk perkalian dengan bilangan yang sama yang di ulang-ulang atau singkatnya adalah perkalian yang diulang-ulang. Di tinjau dari bentuknya, bentuk an (baca : a pangkat n) dengan a disebut basis atau bilangan pokok dan n disebut eksponen atau pangkat. */
+>> 123e5 /* <-- Nilai Input  e5 = (e x 5) */
+<- 12300000 /* <-- Nilai Return(Pengembalian) Output */
+
+>> 123e-5 /* <-- Nilai Input  e5 = (e / 5) */
+<- 0.00123 /* <-- Nilai Return(Pengembalian) Output */
+
+>> 123e-5 /* <-- Nilai Input  e-5 = (e / 5) */
+<- 0.00123 /* <-- Nilai Return(Pengembalian) Output */
+-----------------------------------------------------------------------
+/* Javascript memiliki panjang 64 bit
+
+| = 1 bit digunakan untuk penanda
+||||||||||| = 11 bit digunakan untuk eksponen
+|||||||||||||||||||||||||||||||||||||||||||||||||||| = 52 bit digunakan untukn angka sebenarnya termasuk untuk menyimpan titik untuk pecahan
+
+jangan pernah mengawali angka javascript dengan angka 0 karena hasil tidak sesuai harapan kita
+*/
+//Ex : 
+>> 022 /* <-- Nilai Input (nilai dianggap bilangan oktal) */
+<- 18  /* <-- Nilai Return(Pengembalian) Output */
+
+>> 0xFF /* <-- Nilai Input (nilai dianggap bilangan hexadesimal) */
+<- 255  /* <-- Nilai Return(Pengembalian) Output */
+//-----------------------------------------------------------------------
+//------------------------ Angka Spesial --------------------------------
+//Infinity
+>> 2 / 0 /* <-- Nilai Input */
+<- Infinity /* <-- Nilai Return(Pengembalian) Output */
+
+//-Infinity
+>> -2 / 0 /* <-- Nilai Input */
+<- -Infinity /* <-- Nilai Return(Pengembalian) Output */
+
+//NaN = Not a Number
+>> 0 / 0 /* <-- Nilai Input */
+<- NaN /* <-- Nilai Return(Pengembalian) Output */
+
+>> 100 / "apel" /* <-- Nilai Input */
+<- NaN /* <-- Nilai Return(Pengembalian) Output */
+/*
+---------------------------------------------------------------------
+----------------- Penjumlahan String dan angka ----------------------
+*/
+//Infinity
+>> 100 / "10" /* <-- Nilai Input */
+<- 10 /* <-- Nilai Return(Pengembalian) Output (apabila ada angka di dalam string maka javascript akan membacanya sebagai angka) */

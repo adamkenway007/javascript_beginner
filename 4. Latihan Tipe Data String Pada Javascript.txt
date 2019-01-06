@@ -1,0 +1,68 @@
+/* String = Tipe data string dalam javascript digunakan untuk mempresentasikan data tekstual (plain text)
+
+Rules.
+1. Mengunakan tanda "" atau ''
+2. Apabila Mengawali string dengan "" maka akhiri pula dengan "" dan sebaliknya dengan '' juga
+3. Bisa mengunakan "''" (kutip dua didalam kutip satu) atau '""' sebaliknya dalam kondisi tertentu
+4. Apabila salah kau kalimat di dalam kutip dua "Hari ini adalah hari jum'at" kata bisa menggunakan kutip satu
+
+Example.
+1. "Apel"
+2. 'Apel'
+3. 'Apel Murah Meriah "5k dapat 1kg"'
+4. "Apel Murah Meriah '5k dapat 1kg'"
+
+Escape Character = berfungsi untuk menampilkan sebuah karakter yang di intrepresentasikan berbeda dalam sebuah bahasa pemograman
+1. \" = untuk menampikan sebagai string kutip dua
+2. \' = untuk menampikan sebagai string kutip satu
+
+Example.
+1. '"Apel Murah Meriah "5k dapat 1kg hanya ada pada hari jum\'at'
+2. "'Apel Murah Meriah '5k dapat 1kg hanya ada pada hari jum\"at"
+3. '\"Apel Murah Meriah \"5k dapat 1kg hanya ada pada hari jum\'at'
+4. "\'Apel Murah Meriah \'5k dapat 1kg hanya ada pada hari jum\"at"
+
+/* Macam Macam Escape Character 		
+1. |	\0    	  |   karakter NULL 			|	
+2. |	\'    	  |   '					 		|
+3. |	\"    	  |   "					 		|
+4  |	\\    	  |   \ 						|
+5. |	\n	  	  |   new line / baris baru 	|
+6. |	\t 	  	  |   tab 						|
+7. |	\b 	 	  |   backspace				    |
+8. |	\uXXX 	  |   unicode					|
+				
+Macam Macam Escape Character untuk unicode
+1. |	\u00A9    |   ©  = (C)					|	
+2. |	\u00AE 	  |   ®	 = (R)			 		|
+3. |	\u00B1    |   ±					 		|
+4  |	\u00B5    |   µ 						|
+5. |	\u2122	  |   ™ 						|
+6. |	 ...  	  |   ... 						|
+
+Source https://en.wikipedia.org/wiki/List_of_Unicode_characters
+*/
+
+Example
+1. >> '\"Apel Murah Meriah \"5k dapat 1kg hanya ada pada hari \n jum\'at'
+   <- ""Apel Murah Meriah "5k dapat 1kg hanya ada pada hari jum'at"
+
+   >> '\"Apel Murah Meriah \"5k dapat 1kg hanya ada pada hari \n \n jum\'at'
+   <-- ""Apel Murah Meriah "5k dapat 1kg hanya ada pada hari jum'at"
+
+   >> '\"Apel Murah Meriah \"5k dapat 1kg hanya ada pada hari \t jum\'at'
+   <- ""Apel Murah Meriah "5k dapat 1kg hanya ada pada hari jum'at"
+
+// Pebandingan String
+>> "Apel" = "apel" /* <-- Nilai Input untuk membandingkan string */
+<- false /* <-- Nilai Return(Pengembalian) Output 'false karena case sensitive'*/
+
+// .length = menghitung panjang string
+
+//Example
+1. >> "Apel Murah Meriah".length /* <-- Nilai Input untuk menghitung panjang string */
+   <- 17 /* <-- Nilai Return(Pengembalian) Output panjang string '*/
+2. >> str = "Apel Murah Meriah"
+   <- "Apel Murah Meriah"
+   >> str.length
+   <- 17

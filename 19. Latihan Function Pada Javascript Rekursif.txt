@@ -1,0 +1,78 @@
+/* ------------------- Rekursif -------------------------
+sebuah fungsi yang memanggil dirinya sendiri
+- harus berakhir dan menghasilkan nilai
+*/
+// Ex. Contoh False
+function test(){
+  return test();
+}
+
+test();
+// Hasil = InternalError: too much recursion
+//--------------- Menggunakan Loop (bukan Rekursif) -------
+for(var i = 10; i >= 1; i--) {
+  console.log(i);
+}
+//----------------- Menggunakan Rekursif-------------------
+ function tampilAngka(n) {
+  console.log(n);
+  return tampilAngka(n-1)
+ }
+
+ tampilAngka(10);
+ /*----------------- Menggunakan Rekursif-------------------
+kondisi akhir dari rekursif yang menghasilkan nilai
+ */
+ function cetakAngka(n) {
+    if (n === 0 ) {
+        return;
+    }
+    console.log(n);
+    cetakAngka(n-1);
+  }
+
+  cetakAngka(10);
+  //----------------------- Faktorial -----------------------
+  // 5! = 5 x 4 x 3 x 2 x 1s
+  //----Penghitungan faktorial bisa menggunakan rekursif-----
+function faktorial(n) {
+  if(n === 0) return 0;
+  return n * faktorial(n-1);
+}
+faktorial(5);
+//------------------- Bukan Faktorial(looping)----------------
+function faktorial(n) {
+  var hasil = 1;
+  for( var i = n; i > 0; i-- ) {
+    hasil *= 1;
+  }
+  return hasil;
+}
+//--------------------------------------------------------------
+/*
+faktorial(5)
+5 * faktorial(4)
+5 * (4 * faktorial (3))
+5 * (4 * (3 * faktorial (2)))
+5 * (4 * (3 * (2 * faktorial (1))))
+5 * (4 * (3 * (2 * 1)))
+5 * (4 *(3 * 2))
+5 * (3 * 6)
+5 * 24
+120
+*/
+/* ------------------- Rekursif -------------------------
+semua looping bisa dibuat rekursif, tapi tidak sebaliknya
+*/
+/*--------- Alasan untuk Implementasi Rekursif ----------
+- Menggantikan looping
+- Fibonacci
+- Pencarian dan penelusuran pada struktur data list dan tree
+- Bahasa pemograman yang tidak memiliki pengulangan 
+   1 Haskel, Erlang, Prolog dll,
+- Intelegent Buatan
+- Back Trackking
+- Pembuatan Game
+    1. Menentukan Kolisi antar object
+- dll
+*/

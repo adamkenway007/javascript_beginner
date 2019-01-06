@@ -1,0 +1,60 @@
+/*--------------------- Declaration vs Expression---------------*/
+// Rumus Function Declaration
+function identifier (ParameterList[opt] ) { FunctionBody }
+//opt = optional (tidak wajib)
+// Function Declaration
+//Ex.
+ function tampilPesan (nama) {
+  alert('halo' + nama);
+ }
+
+tampilPesan('Adam');
+
+// Rumus Function Expression
+function identifier[opt] (ParameterList[opt] ) { FunctionBody }
+//opt = optional (tidak wajib)
+// Function Expression
+//Ex.
+ var tampilPesan = function (nama) {
+                   alert('halo' + nama);
+                  }
+ // Function Expression (variable yang menyimpan sebuah function)
+//---------------------------------------------------------------
+/* Karakteristik Function Declaration
+- Lebih Fleksibel(dapat ditulis dimanapun (sebelum / sesudah pemanggilan function))
+    Ex.
+    1. Panggil dulu lalu di deklarasi
+    2. Deklarasi dulu lalu di panggil
+  1. Karena konsep Hoisting
+     Ex. 1
+     //Ex.
+         function tampilPesan (nama) {
+          alert('halo' + nama);
+         }
+         
+         tampilPesan('Adam');
+
+      Ex. 2
+      //Ex.
+          tampilPesan('Adam');
+
+           function tampilPesan (nama) {
+            alert('halo' + nama);
+           }
+        // Kedua cara sama" bisa digunakan
+- Mudah Dipahami pemula
+-------------------------------------------------------------------------
+/* Karakteristik Function Expression
+- Harus didefinisikan terlebih dahulu sebelum dipanggil
+- Lebih powerfull
+  1. Sebagai closure
+  2. Sebagai argumen untuk function lain
+  3. IIFE(immediately Invoked Function Expression)
+*/
+      //Ex.
+
+       function tampilPesan (nama) {
+        alert('halo' + nama);
+       }
+
+        tampilPesan('Adam');

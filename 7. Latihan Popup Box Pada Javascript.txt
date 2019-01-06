@@ -1,0 +1,19 @@
+/* Popup Box / Dialog Box Menampilkan windows kecil pada javascript digunakan untuk alat interaksi agar user dapat berdialog dengan halaman web
+
+Macam-Macam Type Popup Box
+1. Alert   = alert('hello world1');
+2. Prompt  = prompt('hello world');
+3. Confirm = confirm('Apakah Anda Yakin?');
+*/
+//Example.
+
+	var nama = prompt('hello world');
+	alert(nama);
+	var test = confirm('Apakah Anda Yakin?');
+	if (test == true) {
+		alert('Benar');
+	} else {
+		alert('Salah');
+	}
+	
+ 

@@ -1,0 +1,31 @@
+/* Pengulangan While*/
+
+False Example.
+// Infinite Loop / looping forever
+while(true) {
+   console.log('Hello World!');
+}
+
+/* ----------------------------- */
+// False infinite Loop / looping forever
+while(false) {
+   console.log('Hello World!');
+}
+
+/* ----------------------------- */
+//True Example
+var ulang = true;
+	 
+	 while(ulang) {
+	   console.log('Hello World');
+	   ulang = confirm('lagi?');
+   }
+/* ----------------------------- */
+var nilaiAwal = 1;
+   	
+   	while(nilaiAwal <= 5) {
+   		alert('hello world '+ nilaiAwal + 'x');
+   		console.log('hello world '+ nilaiAwal + 'x');
+  		 nilaiAwal++;
+   }
+

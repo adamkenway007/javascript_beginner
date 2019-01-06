@@ -1,0 +1,65 @@
+/*--------------------------------- DOM Events ------------------------
+- Events != Even
+----------------
+- Events = Kejadian
+- Even   = genap / meskipun
+
+Definisi Events
+--------------
+- Events pada javascript merepresentasikan sebuah kejadian yang terjadi 
+  di dalam DOM
+  Ex. 
+   - kejadian tersebut bisa dilakukan oleh user
+     (mouse event, keyboard event, dll)
+   - atau dilakukan secara otomatis oleh API
+     (animasi selesai dijalankan, halaman selesai di load, dll)
+
+Cara 'mendengarkan' event
+-------------------------
+- Event Handler
+  - Inline HTML attribute
+  - Element method
+- AddEventListener()
+
+EventHandler
+-----------
+on<onclick >
+
+Daftar Event
+------------
+- Mouse Event
+- Keyboard Event
+- Resources Event
+- Focus Event
+- View Event
+- Form Event
+- CSS Animation & Transition Event
+- Drag & Drop Event
+- dll.
+
+Mouse Event
+-----------
+- click
+- dblclick
+- mouseover
+- mouseenter
+- mouseup
+- wheel
+- ...
+
+Keyboard Event
+--------------
+- keydown
+- keypress
+- keyup
+
+View Event
+----------
+- resize
+- scroll
+
+Form Event
+----------
+- reset
+- submit
+*/

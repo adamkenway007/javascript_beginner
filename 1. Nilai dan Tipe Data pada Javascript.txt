@@ -1,0 +1,21 @@
+/*
+Di dalam komputer kita kalau kita melihat jauh kedalam itu sebetulnya hanya ada data,kita bisa membaca,memodifikasi,membuat data baru dan menghapusnya,semuat data ini tersimpan dalam serangkaian bit
+
+bit = bit / binary digi / bilangan biner ,adalah satuan terkecil dari data yang ada di dalam komputer kita,nilai bit hanya 0 / 1 == on /off
+
+- Untuk pertama" pada Latihan sesi ini buka browser anda
+- Setelah terbuka buat file index.php dan isi sesuai index.php yang saya isi
+- Klik kanan pilih "inspect element" lalu pilih tab "Console" di sanalah kita akan memulai materi ini
+- Untuk Mengawali ini isi pada kolom kosong console / >> (tergantung web browser anda)
+- Lalu Isi 
+	>> alert("Hello World")
+- maka akan muncul pop up "Hello World" di layar browser anda
+
+Javascript Memiliki 6 Tipe Data yang bisa digunakan yaitu
+1. Number = angka
+2. String
+3. boolean = true / false
+4. object
+5. function
+6. undefined
+*/

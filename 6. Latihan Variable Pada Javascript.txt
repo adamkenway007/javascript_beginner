@@ -1,0 +1,56 @@
+/* sebuah "tempat/wadah" yang memiliki nama,yang digunakan untuk menyimpan nilai
+
+Untuk mempelajari variabel proses yang harus dipahami
+1. Deklarasi
+2. Inisialisasi
+3. Assignment
+
+// 1. Deklarasi   = mendaftarkan variabel ke dalam lingkup yang sesuai
+// 2. Inisialiasi = menyediakan memori untuk variabel
+// 3. Assignment  = menetapkan nilai yang spesifik ke dalam variabel
+*/
+//Example
+>> var x;  // deklarasi & inisialisasi (sekaligus variabel yang namanya 
+		   // 'x' variabel tersebut akan di daftarkan ke dalam lingkup  
+		   // yang sesuai lalu akan di pesan satu block memori yang  
+		   // nantinya bisa menyimpan nilai di dalamnya) 
+<- x = 20; // assignment (menugaskan angka '20' untuk di simpan kedalam
+		   // variabel 'x') 
+
+/* Deklarasi variabel = 1. var : var <nama variabel>
+					 2. let
+					 3. const
+
+Syarat pengunaan 'var'
+1. var tidak boleh memakai spasi; X
+2. var 1tidakboleh; X
+3. var boleh1; O
+4. var ini_juga_boleh; O
+5. var boleh$; O
+6. var $_$; O
+7. var iniJugaDiperbolehkan; O // Camel Case
+
+Kata yang tidak bolehkan untuk penamaan variabel yaitu
+// Keyword & reserved word = Kata yang digunakan sebagai syntax javascript
+// break case catch class const continue debugger default delete do else enum export extends false finally
+// for function if implements import in instanceof interface let new null package private protected public
+// return super switch this throw true try typeof var void while with yield
+
+
+// Shorthand = Syntax untuk menyingkat penulisan variabel
+// Perbandingan variabel biasa 
+>> var nama;
+>> var umur
+>> var lulus;
+
+>> nama = "Adam";
+>> umur = 20;
+>> lulus = false;
+
+// Variabel dengan menggunakan shorthand
+>> var nama = "Adam",
+>>     umur = 20,
+>>     lulus = false;
+
+// variabel scope = lingkup variabel ( akan di jelaskan pada bab lain)
+*/

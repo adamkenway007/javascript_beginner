@@ -1,0 +1,96 @@
+/* --------------- Parameter ---------------
+Variabel yang di tulis dalam kurung pada saat function dibuat, digunakan untuk menampung nilai yang dikirim saat function dipanggil
+
+--------------- Argument -------------------
+Nilai yang dikirim ke parameter saat fungsi dipanggil
+*/
+// Cara 1 
+// Ex.Parameter
+>> function tambah(a,b) {
+	return a + b;
+}
+
+//Ex.Argument
+var hasil = tambah(5,10);
+console.log(hasil);
+
+// Cara 2
+//Ex.Parameter
+>> function tambah(a,b) {
+	return a + b;
+}
+
+//Ex.Argument
+var a = parseInt(prompt('Masukkan nilai 1 :'));
+var b = parseInt(prompt('Masukkan nilai 2 :'));
+var hasil = tambah(a*2,b*2);
+console.log(hasil);
+/*
+/-/ Karakteristik /-/
+bagaimana jika parameter dan argument nya tidak sesuai
+------------------------------------------------------
+/-. Jawab .-/
+- jika parameter lebih sedikit dari argument,
+  maka argument kelebihannya akan diabaikan(tidak error)
+*/
+//Ex.
+>> function tambah(a,b) {
+	return a + b;
+}
+
+
+var hasil = tambah(5,10,20);
+console.log(hasil);
+/*
+------------------------------------------------------
+- jika parameter lebih banyak dari argument,
+  maka parameter kelebihannya akan diisi
+  dengan nilai default(Ex. undefined)
+*/
+//Ex.
+>> function tambah(a,b,c) {
+	return a + b;
+   }
+
+
+var hasil = tambah(5,10);
+console.log(hasil);
+/*
+-------------------------------------------------------
+khusus di dalam javascript ada variable khusus bernama
+- arguments = array yang berisi nilai yang dikirimkan saat fungsi 
+			  dipanggil(sudo variable = variable semu/maya)
+
+------
+Cara ke 1 
+contoh dasar
+------
+*/
+//Ex.
+// tambah(5,10,20,"hi",false); -> arguments = [5,10,20,"hi",false];
+
+>>  function tambah() {
+	return arguments;
+}
+
+	var coba = tambah(5,10,20,"hi","false");
+	console.log(coba);
+
+/*
+------
+Cara ke 2 
+lebih efektif karena bisa mengelola argument sebanyak apapun tanpa merubah function
+------
+Ex.
+*/
+function tambah() {
+	var hasil = 0;
+	for (var i = 0; i < arguments.length; i++) {
+		 hasil += arguments[i];
+	}
+	return hasil
+}
+
+var coba = tambah(1,2,3,4);
+console.log(coba);
+

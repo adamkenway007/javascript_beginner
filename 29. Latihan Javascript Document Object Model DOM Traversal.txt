@@ -1,0 +1,23 @@
+/*--------------------------------- DOM Traversal -----------------------
+Untuk Menelusuri DOM yang telah diseleksi
+- Ex
+ Node pada Element Parent/Orang tua Element itu sendiri
+
+ DOM Traversal Method
+ - parentNode = mengambil node parent
+ - parentElement = mengambil element parent
+ - nextSibling = mengambil node saudara kandung dari node yang di pilih setelahnya
+ - nextElementSibling = mengambil element saudara kandung dari element yang di pilih setelahnya
+ - previousSibling = mengambil node saudara kandung dari node yang di pilih sebelumnya
+ - previousElementSibling = mengambil element saudara kandung dari element yang di pilih sebelumnya
+
+ ______________________________________________________________________
+ |             Method                       |         Hasil           |
+ |------------------------------------------|-------------------------|
+ | parentNode                               |         node            |
+ | parentElement                            |         element         |
+ | nextSibling                              |         node            |
+ | nextElementSibling                       |         element         |
+ | previousSibling                          |         node            |
+ | previousElementSibling                   |         element         |
+ |------------------------------------------|-------------------------|

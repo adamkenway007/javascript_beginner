@@ -1,0 +1,35 @@
+/* Menjalankan function 
+1. Blok kode yang dibuat untuk melakukan tugas spesifik
+2. Dapat dipanggil berulang kali
+3. Memudahkan penelusuran
+4. Reusability
+*/
+//Ex. False (Tanpa function)
+>> var a = 8;
+   var b = 3;
+   var volumeA;
+   var volumeB;
+   var total;
+
+   volumeA = a * a * a;
+   volumeB = b * b * b;
+
+   total = volumeA + volumeB;
+
+   console.log(total);
+//---------------------------------------
+//Ex. True (Menggunakan function)
+>> function jumlahVolumeDuaKubus(a, b) {
+   var volumeA;
+   var volumeB;
+   var total;
+
+   volumeA = a * a * a;
+   volumeB = b * b * b;
+
+   total = volumeA + volumeB;
+
+   return total;
+}
+
+>> alert(jumlahVolumeDuaKubus(8, 3));

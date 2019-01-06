@@ -1,0 +1,289 @@
+ /*------------------------- Object ------------------------------------
+Pengertian
+----------
+- Kumpulan nilai, yang memiliki nama
+- Object adalah array, yang lebih advanced (lebih kompleks)
+
+                  "In Javascript, Object are king.
+          if you understand object, you understand javascript."
+
+Object pada Bahasa Pemograman Lain
+----------------------------------
+- PHP           : Associative Array
+- Python        : Dictionaries
+- C             : Hash Tables
+- Java          : Hash Maps
+- Ruby & Pearl  : Hashes
+
+Kegunaan Object
+---------------
+Ex.1 Tanpa Object Menggunakan array
+>> var mahasiswa =
+   ['Adam Backtiar Azhari', true, [2.90, 3.10, 3.25, 2.88, 3.04]];
+   function IPKumulatif(IPSemester) {
+      var total = 0;
+      for ( var i = 0; i < IPSemester.length; i++) {
+          total += IPSemester[i];
+      }
+      return total/IPSemester.length;
+   }
+   >> IPKumulatif(mahasiswa[2]);
+
+Ex.1 Menggunakan Object Menggunakan array
+   >> var mahasiswa = {
+     nama       : 'Adam Backtiar Azhari',
+     lulus      : true,
+     IPSemester   : [2.90, 3.10, 3.25, 2.88, 3.04],
+     IPKumulatif  : function() {
+          var total = 0;
+          var ips   = this.IPSemester;
+          for( var i = 0; i < ips.length; i++ ) {
+            total += ips[i];
+          }
+          return total/ips.length;
+     }
+} 
+>> mahasiswa.IPKumulatif();
+
+Anatomi Object
+--------------
+// var (variable) Orang = merupakan properti pada kasus ini
+// function yang ada di dalam object = method 
+var Orang = {
+     nama       : 'Adam Backtiar Azhari',
+     umur       : 20,
+     pekerjaan  : '-',
+     sapa       : function() {
+       return 'Hi, nama saya ' + this.nama +
+                 ' usia saya ' + this.umur + ' tahun,
+                   dan saya adalah seorang ' + this.perkerjaan;
+     }
+}
+ */
+// Membuat Object
+var mhs = {    
+    nama   : "Adam Backtiar Azhari",
+    umur   : 20,
+    ips    : [3.00, 2.50, 3.20],
+    alamat : {
+      jalan    : "Jl. Raya Irigasi No 112".
+      kota     : "Surabaya",
+      provinsi : "Jawa Timur"
+    }
+};
+
+//Output
+>> mhs.nama
+<- "Adam Backtiar Azhari"
+>> mhs.umur
+<- 20
+>> mhs["nama"]
+<- "Adam Backtiar Azhari"
+>> mhs.ips
+<- (3) [3, 2.5, 3.2]
+>> mhs.ips[2]
+<- 3.2
+>> mhs.alamat
+<- {jalan: "Jl. Raya Irigasi No 112", kota:
+   "Surabaya", provinsi : "Jawa Timur"}
+>> mhs.alamat.kota
+<- "Surabaya"
+>> mhs["alamat"]["kota"]
+<- "Surabaya"
+/*------------------ Membuat Object Pada Javascript --------------------
+- Object Literal
+- Function Declaration
+- Constructior Function (keyword new)
+-  Object.create()
+*/
+// Membuat Object dengan Object Literal
+
+var obj = {};
+obj.halo = function() {
+  console.log('halo');
+}
+obj.halo();
+
+var mhs1 = {
+    nama    : "Adam Backtiar Azhari",
+    nrp     : "043040023",
+    email   : "adambacktiarazhari@gmail.com",
+    jurusan : "Teknik Informatika"
+
+}
+
+var mhs2 = {
+    nama    : "Adam Backtiar Azhari",
+    nrp     : "043040023",
+    email   : "adambacktiarazhari@gmail.com",
+    jurusan : "Teknik Informatika"
+
+}
+//----------------------------------------------------------------------
+// Function Declaration -> Di Dalam function membuat sebuah object
+function buatObjectMahasiswa(nama, nrp, email, jurusan) {
+ 
+  var mhs = {};
+    mhs.nama    = nama;
+    mhs.nrp     = nrp;
+    mhs.email   = email;
+    mhs.jurusan = jurusan;
+    return mhs;
+}
+
+var mhs3 = buatObjectMahasiswa('Adam Backtiar Azhari', '043040023',
+           'adambacktiarazhari@gmail.com', 'Teknik Informatika')
+>> mhs3
+<- Object { nama: "Adam Backtiar Azhari", nrp: "043040023",
+   email: "adambacktiarazhari@gmail.com", jurusan: "Teknik Informatika" }
+//----------------------------------------------------------------------
+// Constructor -> nama Function Constructor Di mulai Dengan Huruf Besar
+function Mahasiswa(nama, nrp, email, jurusan) {
+  // var this =  {}; // Akan terbuat sendiri secara otomatis
+  this.nama  = nama;
+  this.nrp   = nrp;
+  this.email = email;
+  this.jurusan = jurusan;
+  // return this; // Akan terbuat sendiri secara otomatis
+}
+
+var mhs4 = new Mahasiswa('Adam Backtiar Azhari', '043040023',
+           'adambacktiarazhari@gmail.com', 'Teknik Informatika');
+>> mhs4
+<- Object { nama: "Adam Backtiar Azhari", nrp: "043040023",
+   email: "adambacktiarazhari@gmail.com", jurusan: "Teknik Informatika" }
+
+// Perintah New untuk menambah data object pada Function Constructor
+// agar bisa mengembalikan nilai
+
+/* ---------------------------------------------------------------------
+   --------------------------------------------------------------------- 
+  Konsep 'this'
+- Sebuah Keyword spesial yang secara automatis di definisikan pada setiap
+  function /object
+*/
+>> console.log(this);
+<- Window → https://www.reddit.com/r/DevilMayCry/comments/93zmpd/ddmk_09_gui_preview/ // Berisi Object Global
+
+>> console.log(window);
+<- Window → https://www.reddit.com/r/DevilMayCry/comments/93zmpd/ddmk_09_gui_preview/ // Berisi Object Global
+
+>> console.log(window === this);
+<- true
+
+var a = 10;
+console.log(a);
+
+var a = 10;
+console.log(this.a);
+
+var a = 10;
+console.log(window.a);
+// object window yang di dalamnya ada property 'a' isinya '10'
+
+// Outputnya sama yaitu
+<- 10
+
+function halo {
+  console.log(this);
+  console.log('halo');
+}
+
+halo();
+// this.halo();
+// window.halo();
+
+
+// this mengembalikan object Global
+/* ------------------------------------------------
+// Property = variabel yang ada di dalam object
+// Method   = function yang ada di dalam object
+--------------------------------------------------*/
+/* Menggunakan Object Literal */
+var obj = {};
+obj.halo = function() {
+  console.log(this);
+  console.log('halo');
+}
+
+obj.halo();
+
+// this mengembalikan object yang bersangkutan
+// Output
+<- Object { halo: obj.halo() } 
+   halo
+
+
+/* Menggunakan Constructor */
+function Halo() {
+  console.log(this);
+  console.log('halo');  
+}
+
+var obj1 = new Halo();
+var obj2 = new Halo();
+// this mengembalikan object yang baru dibuat
+
+/* Membuat Object Angkot 
+------------------------
+
+Pengelolaan Angkot
+- Sopir
+- Trayek
+- Kas = Uang Yang Disimpan Sopir
+- Penumpang
+    1. penumpang naik
+    2. penumpang turun
+
+*/
+function Angkot(sopir, trayek, penumpang, kas) { // Nilai Untuk Konstruktor
+  this.sopir     = sopir;     // Properti this.sopir
+  this.trayek    = trayek;    // Properti this.trayek
+  this.penumpang = penumpang; // Properti this.penumpang
+  this.kas       = kas;       // Properti this.kas
+
+  this.penumpangNaik = function(namaPenumpang) {
+    if (penumpang.length == 0 ) {
+     this.penumpang.push(namaPenumpang); 
+     return this.penumpang;
+    } else {
+      for( var i = 0; i < this.penumpang.length;i++ ) {
+        if( this.penumpang[i] == undefined ) {
+            this.penumpang[i] = namaPenumpang;
+            return this.penumpang;
+      }
+      else if(this.penumpang[i] == namaPenumpang) {
+        console.log(namaPenumpang + ' sudah ada di dalam angkot.');
+        return this.penumpang;
+      }
+      else if( i == penumpang.length - 1) {
+        this.penumpang.push(namaPenumpang); 
+        return this.penumpang;
+      }
+     }
+    }
+  }
+
+  this.penumpangTurun = function(namaPenumpang, bayar) {
+   if ( this.penumpang.length === 0) {
+        alert('angkot masih kosong!');
+        return false;
+   } 
+
+   for( var i = 0; i < this.penumpang.length;i++ ) {
+    if( this.penumpang[i] == namaPenumpang) {
+        this.penumpang[i] = undefined;
+        this.kas += bayar;
+        return this.penumpang;
+    }
+   }
+  }
+
+  this.penumpangCari = penumpang.find(function(namaPenumpang) {
+    return this.namaPenumpang == penumpang;
+  })
+}
+
+var angkot1 = new Angkot('Adam Backtiar Azhari',['Surabaya','Gresik',],[],0);
+
+var angkot2 = new Angkot('Adam Kenway',['Gresik','Tulungagung'],[],0);

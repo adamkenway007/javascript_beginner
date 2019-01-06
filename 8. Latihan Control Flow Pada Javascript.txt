@@ -1,0 +1,39 @@
+/* control flow = alur kendali 'control flow' berbeda dengan 'normal flow'
+apabila program kita memiliki lebih dari satu statement, maka statement tersebut akan dieksekusi dari atas kebawah atau dari kiri ke kanan
+
+Control flow memungkin untuk mengatur alur program sesuai keinginan pembuat
+maka dari itu untuk melakukan kedua hal ini membutuhkan sesuatu yang dinamakan
+1. Pengulangan
+2. Pengkondisian
+
+	/* 1. Pengulangan = loop / iteration / iterasi
+sebuah konsep untuk mengerjakan atau mengeksekusi sebuah statement yang sama lebih dari satu kali / berulang
+
+Macam Macam Syntax Pengulangan
+1. for
+2. while
+3. do while
+*/
+//Example.
+1. for :  alert('Mulai');
+		  for(var i = 0; i < 5; i++) {
+		  	alert('Hello World!');
+		  }
+		  alert('Selesai');
+	*/
+	/* 2. Pengkondisian / Conditional
+
+/*
+Macam Macam Syntax Pengkondisian
+1. if
+2. if else
+3. if else if else
+4. switch
+*/
+//Example.
+2. if else : var angka = prompt('Masukkan angka :');
+			 if( angka % 2 === 0 ) {
+			 	alert(angka + ' adalah bilangan Genap');
+			 } else {
+			 	alert(angka + ' adalah bilangan Ganjil');
+			 }

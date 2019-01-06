@@ -1,0 +1,5 @@
+/* Pengulangan For */
+for(var nilaiAwal = 1; nilaiAwal <= 10; nilaiAwal++) {
+	alert('Hello World');
+	console.log('Hello World');
+}

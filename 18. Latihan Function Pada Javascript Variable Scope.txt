@@ -1,0 +1,208 @@
+/* --------------- Refactoring ---------------
+/* block scope vs function scope
+Jenis Scope menurut bahasa pemograman
+1 Ada bahasa pemograman yang memakai konsep block scope
+      - Bahasa C
+         Ex. false
+            int i = 2;
+
+            if(i % 2 == 0) {
+               bool genap = true; // area block scope
+            }
+
+            if(genap) {
+               printf("genap!"); // area block scope
+            }
+         Output = error: 'genap' is undeclared
+          Error Karena variable yang dibuat didalam 
+          block scope hanya berlaku di dalamnya saja
+          tidak bisa digunakan diluar
+      - Bahasa Javascript
+         Ex.
+          var i = 2;
+
+          if(i % 2 == 0) {
+            var genap = true; // area block scope
+          }
+
+          if(genap) {
+            console.log('genap!'); // area block scope
+          }
+          Output = <- genap!
+          Karena Javascript tidak mengganut block scope
+          Oleh karena itu javascript menggunakan konsep
+          function scope
+2 Ada bahasa pemograman yang memakai konsep function scope
+*/
+// global scope / window scope
+//Ex. (function scope) Akan terjadi Error
+var a = 1; /* variable global bisa digunakan dimanapun
+              karena terletal di object window */
+function test() {
+  var b = 2; // var scope hanya berlaku pada area dalam kurung kurawal
+}
+
+test();
+console.log(b);
+// Hasil = Akan terjadi error karena variable 'b' hanya bisa di akses pada lingkup scope
+
+//Ex. 1 (function scope) sukses
+var a = 1; /* variable global bisa digunakan dimanapun
+              karena terletal di object window */
+function test() {
+  var b = 2; // var scope hanya berlaku pada area dalam kurung kurawal
+  console.log(b);
+}
+
+test();
+
+// Hasil = menampilkan proses 'b' pada function test
+
+//Ex. 2 (function scope) sukses
+var a = 1; /* variable global bisa digunakan dimanapun
+              karena terletal di object window */
+function test() {
+  var b = 2; // var scope hanya berlaku pada area dalam kurung kurawal
+  console.log(a);
+}
+
+test();
+
+// Hasil = menampilkan proses 'a' pada variable global
+
+//Ex. 3 (function scope) sukses case name conflict
+var a = 1; /* variable global bisa digunakan dimanapun
+              karena terletal di object window */
+function test() {
+  // name conflict
+  var a = 2; // var scope hanya berlaku pada area dalam kurung kurawal  
+}
+
+console.log(a);
+test();
+
+/* Hasil = menampilkan proses 'a' pada variable global 
+           dan tidak menimpa variable function scope
+*/
+
+//Ex. 4 (function scope) sukses case name conflict
+var a = 1; /* variable global bisa digunakan dimanapun
+              karena terletal di object window */
+function test() {
+  // name conflict
+  var a = 2; // var scope hanya berlaku pada area dalam kurung kurawal  
+  console.log(a);
+}
+
+test();
+
+/* Hasil = menimpa proses 'a' pada variable global 
+           dan menggunakan 'a' pada variable scope
+*/
+
+//Ex. 5 (function scope) sukses case name conflict
+var a = 1; /* variable global bisa digunakan dimanapun
+              karena terletal di object window */
+function test() {
+  // name conflict
+  var a = 2; // var scope hanya berlaku pada area dalam kurung kurawal  
+  console.log(window.a); // mencari & menggunakan variable global / window 'a'
+}
+
+test();
+
+/* Hasil = menggunakan variable 'a' pada window dari pada
+           variable 'a' pada function scope
+*/
+
+//Ex. 6 (function scope) sukses case name conflict
+var a = 1; /* variable global bisa digunakan dimanapun
+              karena terletal di object window */
+function test() {
+  a = 2; // melacak variable 'a'lalu menimpa apabila ada nilai yang baru
+}
+
+test();
+console.log(a);
+
+/* Hasil = menggunakan variable 'a' global karena
+           nilai 'a' pada function scope tidak di kenali
+           sebagai tipe 'var' melainkan mengambil nilai 'a'
+           pada 'var' global lalu menimpa setelah 'a' 
+           di deklarasikan lagi pada function scope
+*/
+
+//Ex. 7 (function scope)
+function test() {
+  a = 2; // melacak variable 'a'lalu menimpa apabila ada nilai yang baru
+}
+
+test();
+console.log(a);
+
+/* Hasil = di dalam kasus ini 'a' pada function
+           scope didefinisikan sebai '2' namun
+           tidak di tulis sebagai variable scope
+           karena kosong tidak diisi secara default
+           'a' pada function test akan membuatkan
+           variable 'a' untuk variable global
+           (perhatian teknik ini dapat membuat
+           variable global secara maya atau mungkin
+           mengotori variable global secara tidak
+           terlihat)
+*/
+
+//Ex. 8 (function scope)
+function test() {
+  var a; 
+  a = 2; // melacak variable 'a'lalu menimpa apabila ada nilai yang baru
+  // bisa dengan teknik var a = 2;
+}
+
+test();
+console.log(a);
+
+/* Hasil = membaca variable 'a' dalam function scope dan memprosesnya 
+*/
+
+//Ex. 9 (function scope)
+"use strict"; // melara pembuatan variable automatis dari function scope
+
+
+function test() {
+  a = 2; // melacak variable 'a'lalu menimpa apabila ada nilai yang baru
+}
+
+test();
+console.log(a);
+
+/* Hasil = ReferenceError: assignment to undeclared variable a  
+*/
+
+//Ex. 10 (function scope)
+var a = 1; // melara pembuatan variable automatis dari function scope
+
+
+function test(a) { //memagil argument variable 'a' pada function test
+  console.log(a); // melacak variable 'a'lalu menimpa apabila ada nilai yang baru
+}
+
+test(2);
+
+/* Hasil = parameter test membaca argument 'a' pada function test
+           lalu mengantikan nilai yang terbaru
+*/
+
+//Ex. 11 (function scope)
+var a = 1; // melara pembuatan variable automatis dari function scope
+
+
+function test(a) { //memagil argument variable 'a' pada function test
+  console.log(a); // melacak variable 'a'lalu menimpa apabila ada nilai yang baru
+}
+
+test(2);
+console.log(a);
+/* Hasil = parameter test membaca argument 'a' pada function test
+           lalu mengantikan nilai yang terbaru namun di tumpuk console.log(a)
+*/
